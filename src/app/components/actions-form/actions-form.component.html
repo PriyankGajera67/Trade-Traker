@@ -1,2 +1,10 @@
-<label for="name">Name: </label>
-<input id="name" type="text" [formControl]="name" />
+<form [formGroup]="actionsForm" (ngSubmit)="onSubmit()">
+  <label for="Amount">Amount: </label>
+  <input id="amount" type="number" formControlName="amount" />
+  <br />
+  <label for="targetGain">Targeted Gain: </label>
+  <input id="targetGain" type="number" formControlName="targetGain" />
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!actionsForm.valid">Submit</button>
+</form>

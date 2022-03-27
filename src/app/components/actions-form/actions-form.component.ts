@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-actions-form',
@@ -11,5 +11,13 @@ export class ActionsFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  name = new FormControl('');
+  actionsForm = new FormGroup({
+    amount: new FormControl(0),
+    targetGain: new FormControl(0),
+  });
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.actionsForm.value);
+  }
 }
