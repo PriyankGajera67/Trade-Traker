@@ -5,7 +5,7 @@ import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class ActionsFormService {
-  baseURL: string = 'http://localhost:3000/';
+  baseURL: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {}
 
@@ -13,6 +13,8 @@ export class ActionsFormService {
     const headers = { 'content-type': 'application/json' };
     const body = JSON.stringify(data);
     console.log(body);
-    return this.http.post(this.baseURL + 'people', body, { headers: headers });
+    return this.http.post(this.baseURL + 'demo/actions', body, {
+      headers: headers,
+    });
   }
 }

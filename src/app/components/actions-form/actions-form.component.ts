@@ -20,7 +20,6 @@ export class ActionsFormComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.actionsForm.value);
-    actionsFormService.
+    this.actionsFormService.addAction(this.actionsForm.value);
   }
 }
